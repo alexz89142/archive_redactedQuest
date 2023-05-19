@@ -1,0 +1,7 @@
+To-do list:
+Add number roller function
+Add final characters
+
+Optional:
+Tooltips only shown when left mouse not pressed
+Find out how to use permanent storage on Heroku

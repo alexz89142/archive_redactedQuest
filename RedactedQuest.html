@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Redacted Qwezt
+        </title>
+        <link rel='icon' href='Assets/Images/favicon.png'>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+        <script src="Scripts/jquery.ui.touch-punch.min.js"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
+        
+        <script src="Scripts/peer.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.core.min.js"></script>
+        
+        <script src='Scripts/displayResizer.js'></script>
+        <script src='Scripts/imageLoader.js'></script>
+        <script src='Scripts/Cards/cards.js'></script>
+        <script src='Scripts/Cards/effects.js'></script>
+        <script src='Scripts/Cards/weapons.js'></script>
+        
+        <link rel="stylesheet" href="Assets/Styles/GUI.css">
+        <link rel="stylesheet" href="Assets/Styles/board.css">
+    </head>
+    
+    <body>
+        <div id='loading'></div>
+        <div id='pInfo'>
+                <div id='pName'>Admin</div>
+                <div id='pMon'>$69</div>
+                <div id='pLevel'></div>
+                <div id='pSet'></div>
+            </div>
+        <div class='oButton' id='setOpen'></div>
+        
+        <div id='setWrap'>
+            <div id='settings'>
+                <div id='MsV'></div>
+                <div id='MuV'></div>
+                <div id='SfV'></div>
+            </div>
+        </div>
+            
+        <div id='overlay'>
+            <div id='form'><br>
+                <br><br>
+                <div id='creds'>
+                    <span id='UAerror'>Not Found</span>
+                    <br><input id='userATMP' class='tbox' type='text'>
+                    <br>
+                    <span id='PAerror'>Incorrect</span>
+                    <br><input id='passATMP' class='tbox' type='password'>
+                </div>
+                <div class='oButton create' id='SIce'></div>
+                <div class='oButton sine' id='SIsi'></div>
+                <div class='backButton' id='SIbb'></div>
+            </div>
+        
+            <div id='quickPlay'>
+                <div class='choose' id='chooseQP'>
+                    <div class='oButton chHost' id='chHostQP'></div>
+                    <div class='oButton chConn' id='chConnQP'></div>
+                    <div class='backButton CHbb' id='CHbbQP'></div>
+                </div>
+                <div class='host' id='hostQP'>
+                    <div class='urID' id='urIDQP'></div>
+                    <div class='oButton accept' id='acceptQP'></div>
+                    <div class='oButton deny'></div>
+                    <div class='connStat' id='connStatQP'>Awaiting Connection</div>
+                    <div class='oButton startG' id='startGQP'></div>
+        
+                    <div class='backButton HObb' id='HObbQP'></div>
+                </div>
+                <div class='conn' id='connQP'>
+                    <input class='tbox conn_tBox' id='conn_tBoxQP' type='text'>
+                    <div class='oButton connBTN' id='connBTNQP'></div>
+                    <div class='oButton cancelBTN'></div>
+                    <div class='backButton CObb' id='CObbQP'></div>
+                </div>
+            </div>
+        
+            <div id='menu'>
+                <div class='oButton' id='MEplay'></div>
+                <div class='oButton' id='MEcards'></div>
+                <div class='oButton' id='MEshop'></div>
+                <div class='backButton' id='MEbb'></div>
+            </div>
+        
+            <div id='play'>
+                <div class='choose' id='choose'>
+                    <div class='oButton chHost' id='chHost'></div>
+                    <div class='oButton chConn' id='chConn'></div>
+                    <div class='backButton CHbb' id='CHbb'></div>
+                </div>
+                <div class='host' id='host'>
+                    <div class='urID' id='urID'></div>
+                    <div class='oButton accept' id='accept'></div>
+                    <div class='oButton deny'></div>
+                    <div class='connStat' id='connStat'>Awaiting Connection</div>
+                    <div class='oButton startG' id='startG'></div>
+        
+                    <div class='backButton HObb' id='HObb'></div>
+                </div>
+                <div class='conn' id='conn'>
+                    <input class='tbox conn_tBox' id='conn_tBox' type='text'>
+                    <div class='oButton connBTN' id='connBTN'></div>
+                    <div class='oButton cancelBTN'></div>
+                    <div class='backButton CObb' id='CObb'></div>
+                </div>
+            </div>
+            
+            <div id='endMsg'>
+                <div id='endWrd'></div>
+                <div id='endBtns'>
+                    <div id='endRem' class='endRem'></div>
+                    <div id='endBak'></div>
+                </div>
+            </div>
+            
+            <div id='shop'>
+                <!--<div id='SHBrowse'>
+                    <div id='StBr'>
+                        <div class='browseUp' id='StBrUP'></div>
+                        <div class='browseDn' id='StBrDN'></div>
+                    </div>
+                    <div id='SeBr'>
+                        <div class='browseUp' id='SeBrUP'></div>
+                        <div class='browseDn' id='SeBrDN'></div>
+                    </div>
+                    <div id='SwBr'>
+                        <div class='browseUp' id='SwBrUP'></div>
+                        <div class='browseDn' id='SwBrDN'></div>
+                    </div>
+                </div>-->
+                
+                <!--<div id='shopChest' title='$10, 3 random cards. Chance for a rare WOKE card'></div> broken, maybe bring it back and make the title include "Once per login"-->
+                <div id='chestCont'>
+                    <div id='chestCard1' class='chestCard'>
+                        
+                    </div>
+                    <div id='chestCard2' class='chestCard'>
+                        
+                    </div>
+                    <div id='chestCard3' class='chestCard'>
+                        
+                    </div>
+                    <div id='CCbb' class='backButton'></div>
+                </div>
+                <div id='SHtabs'>
+                    <div class='oButton' id='tcT'></div>
+                    <div class='oButton' id='efT'></div>
+                    <div class='oButton' id='wpT'></div>
+                </div>
+                
+                <div id='SHtc'>
+                    <div id='tcCont'>
+                    </div>
+                </div>
+                <div id='SHef'>
+                    <div id='ecCont'>
+                    </div>
+                </div>
+                <div id='SHwp'>
+                    <div id='wcCont'>
+                    </div>
+                </div>
+                <div class='backButton' id='SHbb'></div>
+            </div>
+        
+            <div id='cards'>
+                <div id='toCD'>To Deck</div>
+                <div id='CHtabs'>
+                    <div class='oButton' id='tcTC'></div>
+                    <div class='oButton' id='efTC'></div>
+                    <div class='oButton' id='wpTC'></div>
+                </div>
+                
+                <div id='CH'>
+                    <div id='CHtc'>
+                        <div class='tcContC' id='tcContCH'></div>
+                    </div>
+                    <div  id='CHef'>
+                        <div class='ecContC' id='ecContCH'></div>
+                    </div>
+                    <div id='CHwp'>
+                        <div class='wcContC' id='wcContCH'></div>
+                    </div>
+                </div>
+                
+                <div id='CD'>
+                    <div id='CDtc'>
+                        <div class='tcContC' id='tcContCD'></div>
+                    </div>
+                    <div id='CDef'>
+                        <div class='ecContC' id='ecContCD'></div>
+                    </div>
+                    <div id='CDwp'>
+                        <div class='wcContC' id='wcContCD'></div>
+                    </div>
+                </div>
+                
+                
+                <div class='backButton' id='CAbb'></div>
+            </div>
+        </div>
+                
+        <div id='game'>
+            <div id='sCtrls'>
+                <div class='gButton' id='gSign'></div>
+                <div class='gButton' id='gQuik'></div>
+            </div>
+        </div>
+        <div id='board'>
+            <div id='opponentMov'></div>
+            <div id='coin'></div>
+        
+            <div id='go'></div>
+            
+            <div id='characters'>
+                <div id='tCont'>
+                    <div class='card tCard' id='c1'><div class='pHolder'></div></div>
+                    <div class='card tCard' id='c2'><div class='pHolder'></div></div>
+                    <div class='card tCard' id='c3'><div class='pHolder'></div></div>
+                    <div class='card tCard' id='c4'><div class='pHolder'></div></div>
+                </div>
+            </div>
+            <div id='effects'>
+                <div id='eCont'>
+                    <div class='card eCard' id='c1'><div class='pHolder'></div></div>
+                    <div class='card eCard' id='c2'><div class='pHolder'></div></div>
+                    <div class='card eCard' id='c3'><div class='pHolder'></div></div>
+                    <div class='card eCard' id='c4'><div class='pHolder'></div></div>
+                </div>
+            </div>
+            <div id='weapons'>
+                <div class='card wCard' id='c3'><div class='pHolder'></div></div>
+                <div class='card wCard' id='c2'><div class='pHolder'></div></div>
+                <div class='card wCard' id='c1'><div class='pHolder'></div></div>
+            </div>
+            <div id='purgatory'>
+                <div id='eStack'></div>
+                <div id='pStack'></div>
+            </div>
+            
+            <div id='pSB'></div>
+            <div id='pHand'>
+                <div id='pStats'>
+                    <div id='ps1' class='pS'><span class='sHp'>000</span><span class='sDp'>00</span><span class='sAp'>00</span></div>
+                    <div id='ps2' class='pS'><span class='sHp'>000</span><span class='sDp'>00</span><span class='sAp'>00</span></div>
+                    <div id='ps3' class='pS'><span class='sHp'>000</span><span class='sDp'>00</span><span class='sAp'>00</span></div>
+                    <div id='ps4' class='pS'><span class='sHp'>000</span><span class='sDp'>00</span><span class='sAp'>00</span></div>
+                    <div id='ps5' class='pS'><span class='sHp'>000</span><span class='sDp'>00</span><span class='sAp'>00</span></div>
+                </div>
+                
+                <div class='card phCard' id='c1'><div class='pHolder'></div><div class='wHolder'><div></div></div></div>
+                <div class='card phCard' id='c2'><div class='pHolder'></div><div class='wHolder'><div></div></div></div>
+                <div class='card phCard' id='c3'><div class='pHolder'></div><div class='wHolder'><div></div></div></div>
+                <div class='card phCard' id='c4'><div class='pHolder'></div><div class='wHolder'><div></div></div></div>
+                <div class='card phCard' id='c5'><div class='pHolder'></div><div class='wHolder'><div></div></div></div>
+            </div>
+            
+            <div id='eSB'></div>
+            <div id='eHand'>
+                <div class='card ehCard' id='c1'><div class='pHolder'></div><div class='wHolder'><div></div></div></div>
+                <div class='card ehCard' id='c2'><div class='pHolder'></div><div class='wHolder'><div></div></div></div>
+                <div class='card ehCard' id='c3'><div class='pHolder'></div><div class='wHolder'><div></div></div></div>
+                <div class='card ehCard' id='c4'><div class='pHolder'></div><div class='wHolder'><div></div></div></div>
+                <div class='card ehCard' id='c5'><div class='pHolder'></div><div class='wHolder'><div></div></div></div>
+                
+                <div id='eStats'>
+                    <div id='es1' class='eS'><span class='eAp'>00</span><span class='eDp'>00</span><span class='eHp'>000</span></div>
+                    <div id='es2' class='eS'><span class='eAp'>00</span><span class='eDp'>00</span><span class='eHp'>000</span></div>
+                    <div id='es3' class='eS'><span class='eAp'>00</span><span class='eDp'>00</span><span class='eHp'>000</span></div>
+                    <div id='es4' class='eS'><span class='eAp'>00</span><span class='eDp'>00</span><span class='eHp'>000</span></div>
+                    <div id='es5' class='eS'><span class='eAp'>00</span><span class='eDp'>00</span><span class='eHp'>000</span></div>
+                </div>
+            </div>
+        </div>
+        <script src="Scripts/music.js"></script>
+        <script src='Scripts/multiplayerHandler.js'></script>
+        <script src="Scripts/loading.js"></script>
+        <script src='Scripts/GUI.js'></script>
+        <script src='Scripts/board.js'></script>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+/*Canvas functions
+                
+               //Mouse event listeners
+               function clickFindX(event){
+                   var x=Math.ceil(((event.clientX)-((window.innerWidth-canvas.width)/2))/(canvas.width/1920));
+                   return x;
+               }
+               
+               function clickFindY(event){
+                   var y=Math.ceil((event.clientY)/(canvas.height/950));
+                   return y;
+               }
+               
+               $('#MyCanvas').mousemove(function(){
+                   mouseX=clickFindX(event);
+                   mouseY=clickFindY(event);
+                   
+                   $('#debug').text(mouseX+'/'+mouseY);
+                   //It's likely that this might break the support for this on
+                   //touch devices so it's probably a good idea to attach mouseX/Y=
+                   //clickFindX/Y to mousedown
+               });
+               
+               $('#MyCanvas').mousedown(function(){
+                   oldX=clickFindX(event);
+                   oldY=clickFindY(event);
+                   
+                   
+                   for(var xx=(objArray.length)-1;xx>-1;xx--){
+                       if(mouseX>objArray[xx].x&&mouseX<(objArray[xx].x+objArray[xx].w)&&mouseY>objArray[xx].y&&mouseY<(objArray[xx].y+objArray[xx].h)){
+                           timeout=setInterval(function(){
+                               objArray[xx].clickOn();
+                           },1);
+                           return false;
+                       }
+                       else{
+                           //alert('shnaw');
+                       }
+                   }
+               });
+               
+               $(document).mouseup(function(){
+                   clearInterval(timeout);
+                   
+                   for(var xx=(objArray.length)-1;xx>-1;xx--){
+                       if(mouseX>objArray[xx].x&&mouseX<(objArray[xx].x+objArray[xx].w)&&mouseY>objArray[xx].y&&mouseY<(objArray[xx].y+objArray[xx].h)){
+                               objArray[xx].clickOff();
+                       }
+                       else{
+                           //alert('shnaw');
+                       }
+                   }
+                   
+                   return false;
+               });
+               //End mouse functions
+               
+               var fSine=new Sine(images.signUL.src,643,655,274,132,1);
+               var fPlay=new Play('Assets/Images/UI/Canvas/Buttons/QPnocl.png',1018,655,274,132,2);
+               
+               objArray.push(fSine,fPlay);
+               //objArray.push(card1,card2,card3,card4,card5);
+               
+               function update(){
+                 canSize();
+                 draw();
+                 //reHeight();
+               }
+               
+               function reHeight(){
+                   move=(window.innerHeight-canvas.height)/2;
+                   $('#MyCanvas').css("margin-top",move);
+               }
+               
+               function draw(){
+                   ctx.clearRect(0,0,canvas.width,canvas.height);
+                   
+                   ctx.fillStyle=('black');
+                   ctx.fillRect(0,0,1920,950);
+                   ctx.fill();
+                   
+                   ctx.drawImage(images.bGround,0,0,1920,950);
+                   
+                   for(var z=0;z<objArray.length;z++){
+                       var fCard=new Image();
+                       fCard.src=objArray[z].p;
+                       
+                       ctx.drawImage(fCard,objArray[z].x,objArray[z].y,objArray[z].w,objArray[z].h);
+                   }
+                   
+                   requestAnimationFrame(update);
+               }
+               */

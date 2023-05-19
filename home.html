@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='shortcut icon' href='/favicon.ico'>
+        <meta http-Equiv="Cache-Control" Content="no-cache" />
+        <meta http-Equiv="Pragma" Content="no-cache" />
+        <meta http-Equiv="Expires" Content="0" />
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    	<title>
+    	RedactedQuest
+    	</title>
+        <style>
+            body{
+                margin:0;
+                overflow:hidden;
+            }
+            iframe{
+                overflow:hidden;
+                width:1920px;
+                height:950px;
+                
+                transform:scale(1);
+                transform-origin:0% 0%;
+            }
+            #cont{
+            	background-color:black;
+            	width:100vw;
+            	height:100vh;
+            	color:white
+            }	
+        </style>
+    </head>
+    <body>
+    	<div id='cont'>
+        	<iframe id='gameF' src="RedactedQuest.html" style="border:0px #ffffff none;" name="myiFrame" 		
+        	scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" allowfullscreen></iframe>
+        </div>
+        
+        <script>
+        function dispAdapt(){
+                var by; //2.021
+                
+                var wH=window.innerHeight;
+                var wW=window.innerWidth;
+                
+                var nH=window.innerHeight/950;
+                var nW=window.innerWidth/1920;
+                
+                if(wW/wH<2.021){
+                    by=nW;
+                }
+                else{
+                    by=nH;
+                }
+                $('iFrame').css('transform','scale('+by+')');
+            }
+            
+            dispAdapt();
+            window.onresize=dispAdapt;
+        </script>
+    </body>
+</html>

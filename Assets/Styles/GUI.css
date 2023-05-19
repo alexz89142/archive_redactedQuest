@@ -1,0 +1,965 @@
+body{
+                background-color:black;
+                /*user-select:none;*/
+                font-family:'times new roman';
+            }
+            
+            canvas{
+                display:block;
+                
+                margin-left:auto;
+                margin-right:auto;
+                left:0;
+                right:0;
+            }
+            
+            #overlay{
+                z-index:200;
+                display:none;
+                width:1920px;
+                height:950px;
+                
+                
+                position:absolute;
+                margin-left:auto;
+                margin-right:auto;
+                left:0;
+                right:0;
+                font-size:12px;
+                
+                padding-left:25%;
+                padding-top:6.5%;
+                /*background-color:rgba(255, 255, 255, 0.5);*/
+            }
+            #form{
+                display:none;
+                background-image:url('../../Assets/Images/UI/html/signOL.jpg');
+                width:951px;
+                height:653px;
+                
+                font-size:34px;
+                
+                padding-top:82px;
+            }
+            #creds{
+                font-family:georgia;
+                font-size:35px;
+                margin-bottom:25px;
+            }
+            .tbox{
+                font-family:georgia;
+                margin-left:270px;
+                padding-left:8px;
+                border-radius:12px;
+            }
+            .oButton{
+                width:162px;
+                height:71px;
+            }
+            .backButton{
+                background-image: url('../../Assets/Images/UI/html/Buttons/BKup.png');
+                width:55px;
+                height:55px;
+                margin-left:50px;
+            }
+            .backButton:active{
+                background-image: url('../../Assets/Images/UI/html/Buttons/BKpr.png');
+            }
+            .sine{
+                background-image: url('../../Assets/Images/UI/html/Buttons/SIup.jpg');
+                margin-left:30px;
+                display:inline-block;
+            }
+            .sine:active{
+                background-image: url('../../Assets/Images/UI/html/Buttons/SIpr.jpg');
+            }
+            .create{
+                background-image: url('../../Assets/Images/UI/html/Buttons/CRup.jpg');
+                margin-left:450px;
+                display:inline-block;
+            }
+            .create:active{
+                background-image: url('../../Assets/Images/UI/html/Buttons/CRpr.jpg');
+            }
+            
+            #game{
+                width:1920px;
+                height:950px;
+                background-image:url('../../Assets/Images/UI/Canvas/bg.jpg');
+                
+            }
+            .gButton{
+                width:274px;
+                height:132px;
+            }
+            #sCtrls{
+                text-align:center;
+                padding-top:600px;
+            }
+            #gSign{
+                background-image:url('../../Assets/Images/UI/Canvas/Buttons/SInocl.png');
+                display:inline-block;
+            }
+            #gSign:active{
+                background-image:url('../../Assets/Images/UI/Canvas/Buttons/SIcl.png');
+            }
+            #gQuik{
+                background-image:url('../../Assets/Images/UI/Canvas/Buttons/QPnocl.png');
+                display:inline-block;
+                margin-left:70px;
+            }
+            #gQuik:active{
+                background-image:url('../../Assets/Images/UI/Canvas/Buttons/QPcl.png');
+            }
+            
+            /*quickplay*/
+            #quickPlay{
+                display:none;
+            }
+            #menu{
+                position:absolute;
+                display:none;
+                background-image:url('../../Assets/Images/UI/html/menu/menu.jpg');
+                width:607px;
+                height:755px;
+                left:655px;
+                top:96px;
+            }
+            #MEplay{
+                position:absolute;
+                background-image:url('../../Assets/Images/UI/html/menu/playUP.png');
+                width:260px;
+                height:114px;
+                
+                left:174px;
+                top:179px;
+            }
+            #MEplay:active{
+                background-image:url('../../Assets/Images/UI/html/menu/playPR.png');
+            }
+            #MEcards{
+                position:absolute;
+                background-image:url('../../Assets/Images/UI/html/menu/cardsUP.png');
+                width:260px;
+                height:114px;
+                
+                left:174px;
+                top:355px;
+            }
+            #MEcards:active{
+                background-image:url('../../Assets/Images/UI/html/menu/cardsPR.png');
+            }
+            #MEshop{
+                position:absolute;
+                background-image:url('../../Assets/Images/UI/html/menu/shopUP.png');
+                width:260px;
+                height:114px;
+                
+                left:174px;
+                top:526px;
+            }
+            #MEshop:active{
+                background-image:url('../../Assets/Images/UI/html/menu/shopPR.png');
+            }
+            #MEbb{
+                position:absolute;
+                left:-10px;
+                bottom:45px;
+            }
+            
+            #play{
+                display:none;
+            }
+            .choose{
+                position:absolute;
+                width:953px;
+                height:655px;
+                top:135px;
+                left:480px;
+                background-image:url('../../Assets/Images/UI/html/play/choose/QPbg.jpg');
+            }
+            .chHost{
+                position:absolute;
+                width:262px;
+                height:116px;
+                
+                top:340px;
+                left:170px;
+                
+                background-image:url('../../Assets/Images/UI/html/play/choose/hostBTN.jpg');
+            }
+            .chHost:active{
+                background-image: url('../../Assets/Images/UI/html/play/choose/hostBTNpr.jpg');
+            }
+            .chConn{
+                position:absolute;
+                width:262px;
+                height:116px;
+                
+                top:340px;
+                left:550px;
+                
+                background-image:url('../../Assets/Images/UI/html/play/choose/cnBTN.jpg');
+            }
+            .chConn:active{
+                background-image: url('../../Assets/Images/UI/html/play/choose/cnBTNpr.jpg');
+            }
+            .host{
+                display:none;
+                position:absolute;
+                width:953px;
+                height:655px;
+                top:135px;
+                left:480px;
+                background-image:url('../../Assets/Images/UI/html/play/host/HOSTbg.jpg');
+            }
+            
+            .conn{
+                display:none;
+                position:absolute;
+                width:953px;
+                height:655px;
+                top:135px;
+                left:480px;
+                background-image:url('../../Assets/Images/UI/html/play/conn/CNbg.jpg');
+            }
+            .connBTN{
+                z-index:50;
+                position:absolute;
+                width:227px;
+                height:74px;
+                bottom:85px;
+                right:120px;
+                background-image:url('../../Assets/Images/UI/html/play/conn/connectBTN.jpg');
+            }
+            .connBTN:active{
+                background-image: url('../../Assets/Images/UI/html/play/conn/connectBTNpr.jpg');
+            }
+            .cancelBTN{
+                position:absolute;
+                width:179px;
+                height:74px;
+                bottom:85px;
+                right:120px;
+                background-image:url('../../Assets/Images/UI/html/play/conn/cancelUP.png');
+            }
+            .cancelBTN:active{
+                background-image: url('../../Assets/Images/UI/html/play/conn/cancelPR.png');
+            }
+            .conn_tBox{
+                position:absolute;
+                top:330px;
+                font-size:45px;
+                width:370px;
+            }
+            #beta{
+                position:absolute;
+                font-family:arial;
+                right:5px;
+                bottom:5px;
+                color:white;
+            }
+            .urID{
+                position:absolute;
+                top:242px;
+                left:270px;
+                font-size:50px;
+                color:white;
+                text-shadow:
+                -2px -1px 0 #000,
+                3px -1px 0 #000,
+                0px 2px 0 #000,
+                0px -2px 0 #000; 
+            }
+            .connStat{
+                position:absolute;
+                width:440px;
+                text-align:center;
+                top:527px;
+                left:270px;
+                font-size:50px;
+                color:white;
+                text-shadow:
+                -2px -1px 0 #000,
+                3px -1px 0 #000,
+                0px 2px 0 #000,
+                0px -2px 0 #000; 
+            }
+            .startG{
+                display: none;
+                position:absolute;
+                height:74px;
+                width:179px;
+                background-image:url('../../Assets/Images/UI/html/play/host/startUP.png');
+                z-index:23;
+                color:green;
+                bottom:145px;
+                left:390px;
+            }
+            .startG:active{
+                background-image:url('../../Assets/Images/UI/html/play/host/startPR.png');
+            }
+            .accept{
+                display:none;
+                position:absolute;
+                width:179px;
+                height:74px;
+                bottom:145px;
+                left:210px;
+                background-image:url('../../Assets/Images/UI/html/play/host/acceptUP.png');
+                font-size:40px;
+            }
+            .accept:active{
+                background-image:url('../../Assets/Images/UI/html/play/host/acceptPR.png');
+            }
+            .deny{
+                display:none;
+                position:absolute;
+                width:179px;
+                height:74px;
+                bottom:145px;
+                left:510px;
+                background-image:url('../../Assets/Images/UI/html/play/host/Deny/denyUP.png');
+                font-size:40px;
+            }
+            .deny:active{
+                background-image:url('../../Assets/Images/UI/html/play/host/Deny/denyPR.png');
+            }
+            #endMsg{
+                display:none;
+                position:absolute;
+                background-image:url('../../Assets/Images/UI/html/gameEnd/gameend.jpg');
+                width:953px;
+                height:655px;
+                top:134px;
+                left:480px;
+                z-index:15;
+                font-size:145px;
+                color:white;
+                
+                padding-top:230px;
+                padding-left:200px;
+                
+                text-shadow: 
+                -9px 0px 0 #000,
+                9px 0px 0 #000,
+                0px 6px 0 #000,
+                0px -7px 0 #000; 
+            }
+            .HObb{
+                position:absolute;
+                bottom:55px;
+                left:-5px;
+            }
+            .CObb{
+                position:absolute;
+                bottom:55px;
+                left:-5px;
+            }
+            .CHbb{
+                position:absolute;
+                bottom:55px;
+                left:-5px;
+            }
+            #shop{
+                display:none;
+                position:absolute;
+                width:1187px;
+                height:816px;
+                background-image:url('../../Assets/Images/UI/html/shop/SHbg.jpg');
+                
+                left:366px;
+                top:66px;
+            }
+            #SHtc{
+                position:absolute;
+                width:1042px;
+                height:673px;
+                background-image:url('../../Assets/Images/UI/html/shop/teachers.png');
+                
+                left:81px;
+                top:71px;
+                
+                z-index:2;
+            }
+            #SHef{
+                position:absolute;
+                width:1042px;
+                height:673px;
+                background-image:url('../../Assets/Images/UI/html/shop/effects.png');
+                
+                left:81px;
+                top:71px;
+                z-index:1;
+            }
+            #SHwp{
+                position:absolute;
+                width:1042px;
+                height:673px;
+                background-image:url('../../Assets/Images/UI/html/shop/weapons.png');
+                
+                left:81px;
+                top:71px;
+                
+                z-index:1;
+            }
+            #SHtabs{
+                position:absolute;
+                width:485px;
+                height:68px;
+                
+                top:71px;
+                right:82px;
+                z-index:3;
+            }
+            #tcT{
+                position:absolute;
+                width:160px;
+                height:100%;
+            }
+            #efT{
+                position:absolute;
+                left:162px;
+                width:160px;
+                height:100%;
+            }
+            #wpT{
+                position:absolute;
+                left:324px;
+                width:160px;
+                height:100%;
+            }
+            #SHbb{
+                position:absolute;
+                top:75px;
+                left:30px;
+                z-index:3;
+            }
+            #setOpen{
+                position:absolute;
+                background-image:url('../../Assets/Images/UI/html/settings/openSet.png');
+                width:74px;
+                height:68px;
+                right:26px;
+                bottom:21px;
+                
+                z-index:201;
+            }
+            #settings{
+                position:absolute;
+                background-image:url('../../Assets/Images/UI/html/settings/settings.jpg');
+                
+                width:607px;
+                height:755px;
+                
+                left:655px;
+                top:96px;
+                z-index:202;
+            }
+            #MsV{
+                position:absolute;
+                width:400px;
+                top:205px;
+                left:95px;
+                font-size:25px;
+            }
+            #MuV{
+                position:absolute;
+                width:400px;
+                top:290px;
+                left:95px;
+                font-size:25px;
+            }
+            #SfV{
+                position:absolute;
+                width:400px;
+                top:375px;
+                left:95px;
+                font-size:25px;
+            }
+            #tcCont{
+                position:absolute;
+                width:972px;
+                height:530px;
+                background-color:#1b2175;
+                padding-left:25px;
+                padding-top:1px;
+                
+                left:35px;
+                top:105px;
+                
+                overflow-y:auto;
+            }
+            #ecCont{
+                position:absolute;
+                width:972px;
+                height:530px;
+                background-color:#613388;
+                padding-left:25px;
+                padding-top:1px;
+                
+                left:35px;
+                top:105px;
+                
+                overflow:hidden;
+            }
+            #wcCont{
+                position:absolute;
+                width:972px;
+                height:530px;
+                background-color:#680b0c;
+                padding-left:25px;
+                padding-top:1px;
+                
+                left:35px;
+                top:105px;
+                
+                overflow:hidden;
+            }
+            .shopCard{
+                /*background-color: green;*/
+                margin:2px;
+                margin-left:10px;
+                width:168px;
+                height:260px;
+                display:inline-block;
+            }
+            .boxCard{
+                margin:2px;
+                margin-left:10px;
+                width:168px;
+                height:260px;
+                display:inline-block;
+            }
+            .shopICard{
+                height:236px;
+                background-size:100%;
+                background-repeat:no-repeat;
+            }
+            .shopICard:active{
+                height:206px;
+                width:138px;
+                margin: 15px;
+                
+            }
+            .scM{
+                font-size:17px;
+                display:inline-block;
+                color:white;
+                
+                padding-left:5px;
+                width:36px;
+                background-image:url('../../Assets/Images/UI/html/shop/mSlot.png');
+                background-size:100%;
+            }
+            .scN{
+                font-size:17px;
+                display:inline-block;
+                color:white;
+                
+                padding-left:7px;
+                width:132px;
+                background-image:url('../../Assets/Images/UI/html/shop/nSlot.png');
+                background-size:100%;
+            }
+            #shopChest{
+                position:absolute;
+                width:86.5px;
+                height:68.25px;
+                left:500px;
+                top:68px;
+                
+                background-image:url('../../Assets/Images/UI/html/shop/chestUP.png');
+                background-size:100%;
+                z-index:30;
+            }
+            #shopChest:active{
+                background-image:url('../../Assets/Images/UI/html/shop/chestPR.png');
+            }
+            #cards{
+                display:none;
+                position:absolute;
+                width:1187px;
+                height:816px;
+                background-image:url('../../Assets/Images/UI/html/cards/CHbg.jpg');
+                
+                left:366px;
+                top:66px;
+            }
+            #CHtc{
+                position:absolute;
+                width:1042px;
+                height:673px;
+                background-image:url('../../Assets/Images/UI/html/shop/teachers.png');
+                
+                left:81px;
+                top:71px;
+                
+                z-index:2;
+            }
+            #CHef{
+                position:absolute;
+                width:1042px;
+                height:673px;
+                background-image:url('../../Assets/Images/UI/html/shop/effects.png');
+                
+                left:81px;
+                top:71px;
+                z-index:1;
+            }
+            #CHwp{
+                position:absolute;
+                width:1042px;
+                height:673px;
+                background-image:url('../../Assets/Images/UI/html/shop/weapons.png');
+                
+                left:81px;
+                top:71px;
+                
+                z-index:1;
+            }
+            #CHtabs{
+                position:absolute;
+                width:485px;
+                height:68px;
+                
+                top:71px;
+                right:82px;
+                z-index:3;
+            }
+            #tcTC{
+                position:absolute;
+                width:160px;
+                height:100%;
+            }
+            #efTC{
+                position:absolute;
+                left:162px;
+                width:160px;
+                height:100%;
+            }
+            #wpTC{
+                position:absolute;
+                left:324px;
+                width:160px;
+                height:100%;
+            }
+            #CAbb{
+                position:absolute;
+                top:75px;
+                left:30px;
+                z-index:3;
+            }
+            #tcContCH{
+                position:absolute;
+                width:972px;
+                height:530px;
+                background-color:#1b2175;
+                padding-left:25px;
+                padding-top:1px;
+                
+                left:35px;
+                top:105px;
+                
+                overflow-y:auto;
+            }
+            #ecContCH{
+                position:absolute;
+                width:972px;
+                height:530px;
+                background-color:#613388;
+                padding-left:25px;
+                padding-top:1px;
+                
+                left:35px;
+                top:105px;
+                
+                overflow-y:auto;
+            }
+            #wcContCH{
+                position:absolute;
+                width:972px;
+                height:530px;
+                background-color:#680b0c;
+                padding-left:25px;
+                padding-top:1px;
+                
+                left:35px;
+                top:105px;
+                
+                overflow-y:auto;
+            }
+            #CD{
+                display:none;
+            }
+            #CDtc{
+                position:absolute;
+                width:1042px;
+                height:673px;
+                background-image:url('../../Assets/Images/UI/html/shop/teachers.png');
+                
+                left:81px;
+                top:71px;
+                
+                z-index:2;
+            }
+            #CDef{
+                position:absolute;
+                width:1042px;
+                height:673px;
+                background-image:url('../../Assets/Images/UI/html/shop/effects.png');
+                
+                left:81px;
+                top:71px;
+                z-index:1;
+            }
+            #CDwp{
+                position:absolute;
+                width:1042px;
+                height:673px;
+                background-image:url('../../Assets/Images/UI/html/shop/weapons.png');
+                
+                left:81px;
+                top:71px;
+                
+                z-index:1;
+            }
+            
+            .tcContC{
+                position:absolute;
+                width:972px;
+                height:530px;
+                background-color:#1b2175;
+                padding-left:25px;
+                padding-top:1px;
+                
+                left:35px;
+                top:105px;
+                
+                overflow-y:auto;
+            }
+            .ecContC{
+                position:absolute;
+                width:972px;
+                height:530px;
+                background-color:#613388;
+                padding-left:25px;
+                padding-top:1px;
+                
+                left:35px;
+                top:105px;
+                
+                overflow-y:auto;
+            }
+            .wcContC{
+                position:absolute;
+                width:972px;
+                height:530px;
+                background-color:#680b0c;
+                padding-left:25px;
+                padding-top:1px;
+                
+                left:35px;
+                top:105px;
+                
+                overflow-y:auto;
+            }
+            
+            .cardsCard{
+                margin:2px;
+                margin-left:10px;
+                width:168px;
+                height:260px;
+                display:inline-block;
+            }
+            .cardsICard{
+                height:236px;
+                background-size:100%;
+            }
+            #toCD{
+                position:absolute;
+                width:133px;
+                height:60px;
+                background-image:url('../../Assets/Images/UI/html/cards/toUP.png');
+                
+                top:73px;
+                left:400px;
+                z-index:30;
+                
+                color:white;
+                font-size:28px;
+                padding-top:10px;
+                padding-left:18px;
+            }
+            #toCD:active{
+                background-image:url('../../Assets/Images/UI/html/cards/toPR.png');
+            }
+            #SHBrowse{
+                position:absolute;
+                height:63px;
+                width:41px;
+                right:103px;
+                top:185px;
+                
+                
+                z-index:30;
+            }
+            .browseUp{
+                background-image:url('../../Assets/Images/UI/html/shop/browseButtonUP.png');
+                width:100%;
+                height:28px;
+            }
+            .browseUp:active{
+                background-image:url('../../Assets/Images/UI/html/shop/browseButtonPR.png');
+            }
+            .browseDn{
+                position:absolute;
+                background-image:url('../../Assets/Images/UI/html/shop/browseButtonUP.png');
+                transform:rotate(180deg);
+                width:100%;
+                height:28px;
+                top:490px;
+            }
+            .browseDn:active{
+                background-image:url('../../Assets/Images/UI/html/shop/browseButtonPR.png');
+            }
+            #SeBr{
+                display:none
+            }
+            #SwBr{
+                display:none
+            }
+            #loading{
+                position: absolute;
+                z-index:999;
+                width:1920px;
+                height:950px;
+                background-image: url('../../Assets/Images/loading2.jpg');
+                background-size: 100% 100%;
+                background-color: black;
+            }
+            #pInfo{
+                display:none;
+                position: absolute;
+                width:271px;
+                height:98px;
+                
+                top:0px;
+                right:0px;
+                z-index:300;
+            }
+            #pName{
+                position:absolute;
+                width:271px;
+                height:62px;
+                background-image:url('../Images/UI/html/pInfo/name.jpg');
+                
+                text-align:center;
+                color:white;
+                font-size:33px;
+                padding-top:8px;
+            }
+            #pMon{
+                position:absolute;
+                width:66px;
+                height:37px;
+                right:0px;
+                bottom:0px;
+                background-image:url('../Images/UI/html/pInfo/money.jpg');
+                
+                color:white;
+                font-size:23px;
+                padding-top:4px;
+                padding-left:15px;
+            }
+            #pLevel{
+                position:absolute;
+                width:75px;
+                height:37px;
+                right:66px;
+                bottom:0px;
+                background-image:url('../Images/UI/html/pInfo/level.jpg');
+            }
+            #pSet{
+                display:none;
+                position:absolute;
+                width:63px;
+                height:37px;
+                right:141px;
+                bottom:0px;
+                background-image:url('../Images/UI/html/pInfo/pInfoSetUP.jpg');
+                background-color: gray;
+            }
+            #pSet:active{
+                background-image:url('../Images/UI/html/pInfo/pInfoSetPR.jpg');
+            }
+            #UAerror{
+                display:none;
+                margin-left:450px;
+                color:red;
+                font-family: palatino;
+                font-size: 30px
+            }
+            #PAerror{
+                display:none;
+                margin-left:450px;
+                color:red;
+                font-family: palatino;
+                font-size: 30px
+            }
+            .ui-tooltip{
+                white-space: pre-line;
+                background-size: 100% 100%;
+                background-color: black;
+                font-family:times;
+                color:white;
+                box-shadow: none;
+                font-size: 25px;
+                top:0px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            #setWrap{
+                position:absolute;
+                display:none;
+                width:1920px;
+                height:950px;
+                background-image: url('../../Assets/Images/UI/html/settings/setDBG.png');
+            }
+            .scNum{
+                height:0px;
+                display:none;
+            }
+            #endBtns{
+                width:520px;
+                height:74px;
+            }
+            #endRem{
+                background-image: url('../../Assets/Images/UI/html/gameEnd/endBtns/endRem/endRemA.png');
+                height:100%;
+                width:179px;
+                float:left;
+            }
+            #endBak{
+                background-image: url('../../Assets/Images/UI/html/gameEnd/endBtns/endBak/endBakA.png');
+                height:100%;
+                width:179px;
+                float:right;
+            }
+            #endBak:active{
+                background-image: url('../../Assets/Images/UI/html/gameEnd/endBtns/endBak/endBakB.png');
+            }
+            #chestCont{
+                display:none;
+                position: absolute;
+                z-index:430;
+                background-image:url('../../Assets/Images/UI/html/shop/chestCont/chestCont.jpg');
+                width:744px;
+                height:534px;
+                margin-left:220px;
+                margin-top:150px;
+            }
+            #CCbb{
+                position: absolute;
+                bottom:45px;
+            }
